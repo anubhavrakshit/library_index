@@ -2,6 +2,7 @@
 A program to build index of contents of books from a library
 
 Create a driver file like so:
+```
   1 7
   2 Alice /Users/arakshit/Downloads/Alice.txt
   3 Mobydick /Users/arakshit/Downloads/moby.txt
@@ -26,7 +27,8 @@ Create a driver file like so:
  22 war
  23 peace
  24 happy
-
+```
 Run this driver file like so:
-
+```
 darwin:build-string_index-Clang-Debug arakshit$ ./string_index  < driver.txt
+```
