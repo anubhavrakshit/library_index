@@ -22,8 +22,8 @@ class Book {
 private:
     string bookname;
     string filepath;
-public:
     fstream filestream;
+public:
     Book (string name, string filepath) : bookname(name), filestream(filepath) {}
     string GetBookName() {
         return bookname;
@@ -87,13 +87,13 @@ public:
 
     void Print() {
         // Print Index
-        unordered_map<string, index_entry>::iterator itr;
-        for (itr = index.begin(); itr != index.end(); itr++) {
+       // unordered_map<string, index_entry>::iterator itr;
+        for (auto itr = index.begin(); itr != index.end(); itr++) {
             std::cout << "***************" << std::endl;
             std::cout << "Word: " << itr->first << std::endl;
-            unordered_map<string, int>::iterator itr_books;
+            // unordered_map<string, int>::iterator itr_books;
             struct index_entry t_entry = itr->second;
-            for (itr_books = t_entry.entry.begin(); itr_books != t_entry.entry.end(); itr_books++) {
+            for (auto itr_books = t_entry.entry.begin(); itr_books != t_entry.entry.end(); itr_books++) {
                 std::cout << "Book: " << itr_books->first << " " << "Count: " << itr_books->second << std::endl;
             }
             std::cout << "***************" << std::endl;
@@ -102,7 +102,7 @@ public:
         cout << "Total Words scanned: " << total_words << endl;
     }
 
-    void Lookup(string key) {
+    vector <pair<string, int>> Lookup(string key) {
         cout << "Lookup key: " << key << endl;
         vector <pair<string, int>> result;
         auto index_itr = index.find(key);
@@ -117,13 +117,8 @@ public:
 
             // sort results
             sort(result.begin(), result.end(), sortbycount);
-            // print results
-            cout << "Top Results for key: " << key << endl;
-            for (auto x: result) {
-                cout << x.first << " " << x.second << endl;
-            }
-            result.resize(0);
-        }
+                    }
+        return result;
     }
 };
 
@@ -207,9 +202,15 @@ int main()
 
     vector <pair<string, int>> result;
     for (auto key: keys) {
-        index.Lookup(key);
+       result = index.Lookup(key);
+       // print results
+       cout << "Top Results for key: " << key << endl;
+       for (auto x: result) {
+           cout << x.first << " " << x.second << endl;
+       }
     }
 
-    index.Print();
+
+    //index.Print();
     return 0;
 }
