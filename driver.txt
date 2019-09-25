@@ -1,0 +1,24 @@
+7
+Alice /Users/arakshit/Downloads/Alice.txt
+Mobydick /Users/arakshit/Downloads/moby.txt
+Beowulf /Users/arakshit/Downloads/Beowulf.txt
+Dracula /Users/arakshit/Downloads/dracula.txt
+TomSawyer /Users/arakshit/Downloads/tom.txt
+Republic /Users/arakshit/Downloads/republic.txt
+WarPeace /Users/arakshit/Downloads/war.txt
+15
+creation
+worry
+the
+vampire
+she
+he
+him
+lost
+apple
+orange
+life
+supreme
+war
+peace
+happy
